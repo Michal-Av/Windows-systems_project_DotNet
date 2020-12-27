@@ -1,0 +1,137 @@
+﻿<Window x:Class="PLWPF.ContractWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="ContractWindow" Height="600" Width="500">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/abstract-light-white-background-wallpaper-2.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="115*"/>
+            <ColumnDefinition Width="49*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Label FontSize="27" FontFamily="Britannic Bold" Content="Manage Contract" Grid.ColumnSpan="2" Margin="7,4,140.333,43.667" Grid.RowSpan="2"/>
+        <StackPanel Orientation="Horizontal" Margin="10,0,145,5" Grid.Row="1" Grid.ColumnSpan="2">
+            <Label Content="Contract Number" HorizontalAlignment="Center" Foreground="RoyalBlue" Width="137" FontSize="16" Margin="0,6,0,0"/>
+            <TextBox x:Name="contractNum" HorizontalAlignment="Left" Height="24" Margin="0,9,0,5" VerticalAlignment="Center" Width="135" Text="{Binding NumContract, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,0,145,5" Grid.Row="2" Grid.ColumnSpan="2">
+            <Label Content="Id Employer" HorizontalAlignment="Center" Foreground="RoyalBlue" Width="103" FontSize="16" Margin="0,6,0,0"/>
+            <TextBox x:Name="IdEmployer" HorizontalAlignment="Left" Height="24" Margin="0,9,0,5" VerticalAlignment="Center" Width="135" Text="{Binding  IdEmployer, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.469"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,0,145,5" Grid.Row="3" Grid.ColumnSpan="2">
+            <Label Content="Id Employee" HorizontalAlignment="Center" Foreground="RoyalBlue" Width="103" FontSize="16" Margin="0,6,0,0"/>
+            <TextBox x:Name="IdEmployee" HorizontalAlignment="Left" Height="24" Margin="0,9,0,5" VerticalAlignment="Center" Width="135" Text="{Binding  IdEmployee, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="37" Width="244" Grid.Row="4" Margin="12,5,89,5">
+            <Label Content="Interview" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="RoyalBlue" Height="31" Width="83" FontSize="16" Grid.Row="5" Margin="0,3"/>
+            <CheckBox x:Name="ContractInterview" HorizontalAlignment="Left" Margin="0,12,0,10" VerticalAlignment="Center" Height="15" Width="34" IsChecked="{Binding Interview, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="37" Width="244" Grid.Row="5" Margin="12,5,89,5">
+            <Label Content="signed contract" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="RoyalBlue" Height="31" Width="122" FontSize="16" Grid.Row="5" Margin="0,3"/>
+            <CheckBox x:Name="ContractSigned" HorizontalAlignment="Left" Margin="0,12,0,10" VerticalAlignment="Center" Height="15" Width="34" IsChecked="{Binding Contract, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,0,145,5" Grid.Row="6" Grid.ColumnSpan="2">
+            <Label Content="Bruto Salary" HorizontalAlignment="Center" Foreground="RoyalBlue" Width="103" FontSize="16" Margin="0,6,0,0"/>
+            <TextBox x:Name="BrutoSalary" HorizontalAlignment="Left" Height="24" Margin="0,9,0,5" VerticalAlignment="Center" Width="135" Text="{Binding BrutoSalary, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,0,145,5" Grid.Row="7" Grid.ColumnSpan="2">
+            <Label Content="Neto Salary" HorizontalAlignment="Center" Foreground="RoyalBlue" Width="103" FontSize="16" Margin="0,6,0,0"/>
+            <TextBox x:Name="NetoSalary" HorizontalAlignment="Left" Height="24" Margin="0,9,0,5" VerticalAlignment="Center" Width="135" Text="{Binding NetoSalary, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="37" Width="244" Grid.Row="8" Margin="10,6,91,5">
+            <Label Content="Start Date" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="RoyalBlue" Height="31" Width="87" FontSize="16" Margin="0,3"/>
+            <DatePicker x:Name="StartDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="0,7,0,0" VerticalAlignment="Top" Width="120" SelectedDate="{Binding StartDate, Mode=TwoWay,NotifyOnValidationError=True,ValidatesOnExceptions=True}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="37" Width="244" Grid.Row="9" Margin="10,6,91,5">
+            <Label Content="End Date" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="RoyalBlue" Height="31" Width="87" FontSize="16" Margin="0,3"/>
+            <DatePicker x:Name="EndDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="0,7,0,0" VerticalAlignment="Top" Width="120" SelectedDate="{Binding EndDate, Mode=TwoWay,NotifyOnValidationError=True,ValidatesOnExceptions=True}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,0,145,5" Grid.Row="10" Grid.ColumnSpan="2">
+            <Label Content="Month Hours" HorizontalAlignment="Center" Foreground="RoyalBlue" Width="103" FontSize="16" Margin="0,6,0,0"/>
+            <TextBox x:Name="MonthHours" HorizontalAlignment="Left" Height="24" Margin="0,9,0,5" VerticalAlignment="Center" Width="135" Text="{Binding MonthHours, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,0,145,5" Grid.Row="11" Grid.ColumnSpan="2">
+            <Label Content="Work Address" HorizontalAlignment="Center" Foreground="RoyalBlue" Width="113" FontSize="16" Margin="0,6,0,0"/>
+            <TextBox x:Name="WorkAddress" HorizontalAlignment="Left" Height="24" Margin="0,9,0,5" VerticalAlignment="Center" Width="135" Text="{Binding WorkAddress, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"/>
+        </StackPanel>
+        <Button x:Name="b1" Content="Add" HorizontalAlignment="Left" Margin="25,8,0,0" FontSize="22"  Background="{StaticResource MyBottenDesign}" FontFamily="Britannic Bold"  Grid.Row="8" VerticalAlignment="Top" Width="100" Height="32" Grid.Column="1" Click="add_Click">
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=contractNum, Path=Text}" Value="">
+                            <Setter Property="Button.IsEnabled" Value="false"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=IdEmployer, Path=Text}" Value="">
+                            <Setter Property="Button.IsEnabled" Value="false"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=IdEmployee, Path=Text}" Value="">
+                            <Setter Property="Button.IsEnabled" Value="false"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=BrutoSalary, Path=Text}" Value="">
+                            <Setter Property="Button.IsEnabled" Value="false"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=NetoSalary, Path=Text}" Value="">
+                            <Setter Property="Button.IsEnabled" Value="false"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=MonthHours, Path=Text}" Value="">
+                            <Setter Property="Button.IsEnabled" Value="false"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=WorkAddress, Path=Text}" Value="">
+                            <Setter Property="Button.IsEnabled" Value="false"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="b2" Content="remove" HorizontalAlignment="Left" Margin="25,8,0,7" FontSize="22"  Background="{StaticResource MyBottenDesign}" FontFamily="Britannic Bold"  Grid.Row="9" Width="100" Grid.Column="1" Click="remove_Click">
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=NumContract, Path=Text}" Value="">
+                            <Setter Property="Button.IsEnabled" Value="false"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="b3" Content="Update" HorizontalAlignment="Left" Margin="25,11,0,0" FontSize="22"  Background="{StaticResource MyBottenDesign}" FontFamily="Britannic Bold" Grid.Row="10" VerticalAlignment="Top" Width="100" Height="32" Grid.Column="1" Click="update_Click">
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=NumContract, Path=Text}" Value="">
+                            <Setter Property="Button.IsEnabled" Value="false"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>
